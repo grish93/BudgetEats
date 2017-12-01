@@ -97,6 +97,7 @@ class FoodItemsVC: UIViewController {
                     self.searchQueue.async(group: nil, qos: .default, flags: .barrier, execute: {
                         self.restaurants = []
                         if let dictionary = item as? [String: AnyObject] {
+                            // RESPONSE PRINITNG IS HERE!
                             print(dictionary)
                             if let rawRestaurants = dictionary["restaurants"] as? [[String:Any]] {
                                 print (rawRestaurants)
@@ -105,19 +106,29 @@ class FoodItemsVC: UIViewController {
                                     var restaurant = [String:Any]()
                                     restaurant["name"] = rawRestaurant?["name"]
                                     restaurant["price_range"] = rawRestaurant?["price_range"]
-                                    if restaurant["price_range"] as! Int > priceLimit {
+                                    if (restaurant["price_range"] as! Int) != priceLimit {
                                         continue
                                     }
                                     if let userRating = rawRestaurant!["user_rating"] as? [String:Any] {
                                         restaurant["rating"] = userRating["aggregate_rating"]
                                     }
-                                    restaurant["thumbnail_url"] = rawRestaurant?["thumb"]
+                                    if let location = rawRestaurant!["location"] as? [String:Any] {
+                                        restaurant["address"] = location["address"]
+                                    }
+                                    //restaurant["thumbnail_url"] = rawRestaurant?["thumb"]
                                     restaurant["menu_url"] = rawRestaurant?["menu_url"]
                                     self.restaurants.append(restaurant as [String : AnyObject])
                                 }
                             }
                         }
                         DispatchQueue.main.async() {
+                            print(self.restaurants)
+                            if self.restaurants.count == 0 {
+                                // Show "NO RESULTS"
+                                return
+                            } else {
+                                // Segue to map vc
+                            }
                            // self.tableView.reloadData()
                         }
                     })
@@ -173,13 +184,12 @@ class FoodItemsVC: UIViewController {
         if(searchField.text == nil || searchField.text == "") {
             return
         }
-        let price = PriceSeg.selectedSegmentIndex + 1 as Int
+        let price = PriceSeg.selectedSegmentIndex + 2 as Int
         getRestaurants((searchField.text)!, price)
     }
+ 
     
-//   PriceFilterSeg {
-//
-//    }
+    
 }
 
 

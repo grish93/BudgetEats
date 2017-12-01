@@ -23,19 +23,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you hungry for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-Qj-xdo">
-                                <rect key="frame" x="58" y="155" width="283" height="51"/>
+                                <rect key="frame" x="49" y="155" width="292" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.79742218129999998" blue="0.4837105941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="eg: &quot;tacos&quot;" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbF-v4-JhO">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="eg: &quot;tacos&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="zbF-v4-JhO">
                                 <rect key="frame" x="26" y="234" width="323" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-Nu-fpw">
                                 <rect key="frame" x="86" y="319" width="203" height="29"/>
@@ -45,18 +50,15 @@
                                     <segment title="$"/>
                                     <segment title="$$"/>
                                     <segment title="$$$"/>
+                                    <segment title="$$$$"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="FindBtn:" destination="Vsi-pQ-24p" eventType="valueChanged" id="vNi-aI-iQF"/>
-                                    <action selector="PriceFilterSeg:" destination="Vsi-pQ-24p" eventType="valueChanged" id="b9G-C6-Jy1"/>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IH-mH-tuS">
-                                <rect key="frame" x="140" y="455" width="94" height="30"/>
+                                <rect key="frame" x="140" y="390" width="94" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Just for me">
+                                <state key="normal" title="Find">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -84,7 +86,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="6" y="169"/>
+            <point key="canvasLocation" x="5.5999999999999996" y="168.6656671664168"/>
         </scene>
         <!--Map BoxVC-->
         <scene sceneID="QLa-Rz-vSi">

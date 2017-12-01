@@ -15,9 +15,7 @@
 		654175EC1FC0F0E900A3742B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654175EA1FC0F0E900A3742B /* LaunchScreen.storyboard */; };
 		654175F71FC0F0E900A3742B /* BudgetEatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654175F61FC0F0E900A3742B /* BudgetEatsTests.swift */; };
 		654176021FC0F0E900A3742B /* BudgetEatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654176011FC0F0E900A3742B /* BudgetEatsUITests.swift */; };
-		654176101FC0F25E00A3742B /* FoodItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541760F1FC0F25E00A3742B /* FoodItemsTVC.swift */; };
-		655241181FC26E1D000C8795 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655241171FC26E1D000C8795 /* RestaurantTableViewCell.swift */; };
-		65F91D3F1FD09CC40091290C /* MapBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91D3E1FD09CC40091290C /* MapBoxVC.swift */; };
+		65F91D3F1FD09CC40091290C /* MapKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91D3E1FD09CC40091290C /* MapKitVC.swift */; };
 		65F91D431FD0E18F0091290C /* FoodItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91D421FD0E18F0091290C /* FoodItemsVC.swift */; };
 		CDE3CA5B7EB6E78D7D52733C /* Pods_BudgetEatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629B15E22B7DBE6A6CB71F89 /* Pods_BudgetEatsTests.framework */; };
 		E9F395FBB1D50694DE7E58E9 /* Pods_BudgetEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40D45BCF759404C8BB09EAE /* Pods_BudgetEats.framework */; };
@@ -59,9 +57,7 @@
 		654175FD1FC0F0E900A3742B /* BudgetEatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetEatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		654176011FC0F0E900A3742B /* BudgetEatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetEatsUITests.swift; sourceTree = "<group>"; };
 		654176031FC0F0E900A3742B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6541760F1FC0F25E00A3742B /* FoodItemsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemsTVC.swift; sourceTree = "<group>"; };
-		655241171FC26E1D000C8795 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
-		65F91D3E1FD09CC40091290C /* MapBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxVC.swift; sourceTree = "<group>"; };
+		65F91D3E1FD09CC40091290C /* MapKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitVC.swift; sourceTree = "<group>"; };
 		65F91D421FD0E18F0091290C /* FoodItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemsVC.swift; sourceTree = "<group>"; };
 		7EAA649C7CB3BDBC0642EBFF /* Pods-BudgetEatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetEatsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetEatsTests/Pods-BudgetEatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A2E551C33799DEC561FEC041 /* Pods-BudgetEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetEatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BudgetEatsTests/Pods-BudgetEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,10 +168,8 @@
 		655241161FC20E9D000C8795 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6541760F1FC0F25E00A3742B /* FoodItemsTVC.swift */,
 				65F91D421FD0E18F0091290C /* FoodItemsVC.swift */,
-				655241171FC26E1D000C8795 /* RestaurantTableViewCell.swift */,
-				65F91D3E1FD09CC40091290C /* MapBoxVC.swift */,
+				65F91D3E1FD09CC40091290C /* MapKitVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -510,10 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655241181FC26E1D000C8795 /* RestaurantTableViewCell.swift in Sources */,
 				65F91D431FD0E18F0091290C /* FoodItemsVC.swift in Sources */,
-				65F91D3F1FD09CC40091290C /* MapBoxVC.swift in Sources */,
-				654176101FC0F25E00A3742B /* FoodItemsTVC.swift in Sources */,
+				65F91D3F1FD09CC40091290C /* MapKitVC.swift in Sources */,
 				654175DF1FC0F0E900A3742B /* AppDelegate.swift in Sources */,
 				654175E71FC0F0E900A3742B /* BudgetEats.xcdatamodeld in Sources */,
 			);
