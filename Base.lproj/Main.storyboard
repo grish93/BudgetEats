@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Food ItemsVC-->
         <scene sceneID="PIa-Qn-csP">
             <objects>
-                <viewController id="Vsi-pQ-24p" sceneMemberID="viewController">
+                <viewController id="Vsi-pQ-24p" customClass="FoodItemsVC" customModule="BudgetEats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PrR-4P-3yz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,31 +47,20 @@
                                     <segment title="$$$"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="FindBtn:" destination="Vsi-pQ-24p" eventType="valueChanged" id="vNi-aI-iQF"/>
+                                    <action selector="PriceFilterSeg:" destination="Vsi-pQ-24p" eventType="valueChanged" id="b9G-C6-Jy1"/>
+                                </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjN-yV-vum">
-                                <rect key="frame" x="205" y="491" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Date Night ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-07-CLA">
-                                <rect key="frame" x="89" y="383" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" red="0.28827685117721558" green="0.58411109447479248" blue="0.9125475287437439" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="maximumTrackTintColor" red="0.28827685117721558" green="0.58411109447479248" blue="0.9125475287437439" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IH-mH-tuS">
-                                <rect key="frame" x="58" y="491" width="94" height="30"/>
+                                <rect key="frame" x="140" y="455" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Just for me">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Sz1-UE-T8j" kind="showDetail" id="7FC-3O-Bq4"/>
+                                    <action selector="FindBtn:" destination="Vsi-pQ-24p" eventType="touchUpInside" id="M9Z-IQ-Pt8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,7 +69,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="KxI-AE-ye8"/>
                     <connections>
+                        <outlet property="PriceSeg" destination="uf9-Nu-fpw" id="gk4-Ot-zb6"/>
                         <outlet property="searchDisplayController" destination="yob-Ww-vhe" id="lqU-jV-dRu"/>
+                        <outlet property="searchField" destination="zbF-v4-JhO" id="c9c-hF-dqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V81-Ns-vNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,20 +86,26 @@
             </objects>
             <point key="canvasLocation" x="6" y="169"/>
         </scene>
-        <!--Food ItemsTVC-->
-        <scene sceneID="SHK-uD-Lkx">
+        <!--Map BoxVC-->
+        <scene sceneID="QLa-Rz-vSi">
             <objects>
-                <viewController id="Sz1-UE-T8j" customClass="FoodItemsTVC" customModule="BudgetEats" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U3A-Pn-Ont">
+                <viewController id="wz3-d7-OOi" customClass="MapBoxVC" customModule="BudgetEats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1HO-ac-Vef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-rl-iMZ">
+                                <rect key="frame" x="0.0" y="20" width="359" height="627"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="vzH-R1-gq1"/>
+                        <viewLayoutGuide key="safeArea" id="JJD-rH-7g6"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vWV-tN-lAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wut-v3-ZyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061.5999999999999" y="168.6656671664168"/>
+            <point key="canvasLocation" x="932" y="169"/>
         </scene>
     </scenes>
 </document>
