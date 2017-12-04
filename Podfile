@@ -1,19 +1,20 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-use_frameworks!
-
 target 'BudgetEats' do
-  pod 'Mapbox-iOS-SDK', '~> 3.7'
-  pod 'MapboxNavigation', '~> 0.11'
-end
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-#pod 'MapboxNavigation', :git => 'https://github.com/mapbox/mapbox-navigation-ios.git', :tag => 'v0.11.0-rc.1'
+  # Pods for BudgetEats
 
   target 'BudgetEatsTests' do
     inherit! :search_paths
+    # Pods for testing
   end
 
   target 'BudgetEatsUITests' do
     inherit! :search_paths
+    # Pods for testing
   end
+
+end

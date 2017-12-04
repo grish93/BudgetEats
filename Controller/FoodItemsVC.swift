@@ -24,7 +24,7 @@ class FoodItemsVC: UIViewController {
     
     //Location Identifier
     var locManager: CLLocationManager!
-    var restaurants :[[String:AnyObject]] = []
+    var restaurants: [[String:AnyObject]] = []
     var searchQueue: DispatchQueue!
     
     override func viewDidLoad() {
@@ -124,10 +124,14 @@ class FoodItemsVC: UIViewController {
                         DispatchQueue.main.async() {
                             print(self.restaurants)
                             if self.restaurants.count == 0 {
-                                // Show "NO RESULTS"
+                                let alertController = UIAlertController(title: "🙁", message:
+                                    "No restaurants matched your search!", preferredStyle: UIAlertControllerStyle.alert)
+                                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                                
+                                self.present(alertController, animated: true, completion: nil)
                                 return
                             } else {
-                                // Segue to map vc
+                                self.performSegue(withIdentifier: "segueToMap", sender:nil);
                             }
                            // self.tableView.reloadData()
                         }
@@ -145,6 +149,14 @@ class FoodItemsVC: UIViewController {
         }
         // Execute the URL Task
         task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let destinationVC = segue.destination as? MapVC
+        {
+            destinationVC.loadRestaurants(restaurants: self.restaurants)
+        }
     }
     
     override func didReceiveMemoryWarning() {
