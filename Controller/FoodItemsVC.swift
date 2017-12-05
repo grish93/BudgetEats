@@ -20,14 +20,14 @@ class FoodItemsVC: UIViewController {
     var lastSearchQuery: String = "sushi"
     var searchQd: DispatchQueue!
     
-    
-    
     //Location Identifier
     var locManager: CLLocationManager!
     var restaurants: [[String:AnyObject]] = []
     var searchQueue: DispatchQueue!
     
     override func viewDidLoad() {
+        
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
         super.viewDidLoad()
         
         if !isConnectedToNetwork() {
@@ -73,7 +73,7 @@ class FoodItemsVC: UIViewController {
         print(urlString)
         
         let requestUrl = URL(string:urlString)
-        var request = URLRequest(url:requestUrl!)
+        var request = URLRequest(url:requestUrl!)//Unexpectedly found nil while unwrapping a
         request.setValue(APIKey, forHTTPHeaderField: "user-key")
         
         // Setup the URL Session...
@@ -124,8 +124,8 @@ class FoodItemsVC: UIViewController {
                         DispatchQueue.main.async() {
                             print(self.restaurants)
                             if self.restaurants.count == 0 {
-                                let alertController = UIAlertController(title: "🙁", message:
-                                    "No restaurants matched your search!", preferredStyle: UIAlertControllerStyle.alert)
+                                let alertController = UIAlertController(title: "Sorry", message:
+                                    "No restaurants matched your search! Try a different price point.", preferredStyle: UIAlertControllerStyle.alert)
                                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                                 
                                 self.present(alertController, animated: true, completion: nil)

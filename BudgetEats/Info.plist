@@ -17,13 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2.0</string>
+	<string>0.4.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Needed to find restaurants around you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Used to find restaurants around you</string>
 	<key>UILaunchStoryboardName</key>
@@ -47,8 +49,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Used to find restaurants around you</string>
 	<key>pk.eyJ1IjoicGlua3BhbnRoZXIzMyIsImEiOiJjamFtem44cm8wMmIxMnFuNGs2YzJ3d2w3In0.pRMLAqJV2IYpV7BTXVopFQ</key>
 	<string></string>
 </dict>
