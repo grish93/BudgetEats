@@ -10,18 +10,24 @@ class MapVC: UIViewController {
     let locManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+        
+        // Get actual location if user allowed the location permissions.
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+            
+            var currentLocation: CLLocation!
+            currentLocation = locManager.location
             mapView.showsUserLocation = true
+            
+            //let location = CLLocationCoordinate2D(latitude: 37.7908432, longitude: -122.4012826)
+            //print("Current Location: ",  location)
+            let span = MKCoordinateSpanMake(0.03, 0.03)
+            let region = MKCoordinateRegion(center: currentLocation.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
+
         } else {
             locManager.requestAlwaysAuthorization()
         }
-        let location = CLLocationCoordinate2D(latitude: 37.7908432, longitude: -122.4012826)
-       
-        let span = MKCoordinateSpanMake(0.03, 0.03)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
-
     }
     
     func loadRestaurants (restaurants: [[String:AnyObject]]) {
@@ -43,8 +49,7 @@ class MapVC: UIViewController {
     }
     
 }
-//
-// MARK: - MKMapViewDelegate
+
 
 
 

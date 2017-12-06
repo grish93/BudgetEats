@@ -27,7 +27,7 @@ class FoodItemsVC: UIViewController {
     
     override func viewDidLoad() {
         
-        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         super.viewDidLoad()
         
         if !isConnectedToNetwork() {
@@ -54,7 +54,7 @@ class FoodItemsVC: UIViewController {
         
         var latitude = "34.0522342"
         var longitude = "-118.2436849"
-        let radius = "10000" // In meters, so this is 10km.
+        let radius = "20000" // In meters, so this is 10km.
         
         // Get actual location if user allowed the location permissions.
         if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
@@ -69,7 +69,8 @@ class FoodItemsVC: UIViewController {
             }
             
         }
-        let urlString: String = APIServer + input + "&lat=" + latitude + "&lon=" + longitude + "&radius=" + radius + "&sort=cost&order=desc"
+        var startingUrl = APIServer + input.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let urlString: String = startingUrl + "&lat=" + latitude + "&lon=" + longitude + "&radius=" + radius + "&sort=cost&order=desc"
         print(urlString)
         
         let requestUrl = URL(string:urlString)
@@ -199,9 +200,6 @@ class FoodItemsVC: UIViewController {
         let price = PriceSeg.selectedSegmentIndex + 2 as Int
         getRestaurants((searchField.text)!, price)
     }
- 
-    
-    
 }
 
 
